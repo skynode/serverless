@@ -1,63 +1,94 @@
+<!--
+title: Serverless Framework Documentation
+menuText: Docs
+layout: Doc
+menuItems:
+  - {menuText: Getting Started, path: /framework/docs/getting-started/}
+  - {menuText: AWS, path: /framework/docs/providers/aws/}
+  - {menuText: Azure, path: /framework/docs/providers/azure/}
+  - {menuText: Google, path: /framework/docs/providers/google/}
+  - {menuText: OpenWhisk, path: /framework/docs/providers/openwhisk/}
+-->
+
+<!-- DOCS-SITE-LINK:START automatically generated  -->
+### [Read this on the main serverless docs site](https://www.serverless.com/framework/docs/)
+<!-- DOCS-SITE-LINK:END -->
+
 # Documentation
 
-Welcome to the Serverless v1.0 documentation.
+The Serverless Framework is a CLI tool that allows users to build & deploy auto-scaling, pay-per-execution, event-driven functions.
 
-Here you'll find all the necessary information you need to learn and understand Serverless.
-It'll show you how you can build next generation Serverless applications. Furthermore we'll deep dive into the
-internals of Serverless so that you know how it works and how you can extend and modify it!
+Write your code, configure events to trigger your functions, then deploy & run those functions to your [cloud provider](#Supported-Providers) via the **Serverless CLI**.
 
-## Quick start
+Getting started with serverless? **[Start here](./getting-started.md)**.
 
-Follow these simple steps to install the beta, create and deploy your first service, run your function and remove the
-service afterwards.
+Already using AWS or another cloud provider? Read on.
 
-1. `npm install -g serverless@beta`
-2. `mkdir my-first-service && cd my-first-service`
-3. `serverless create --template aws-nodejs`
-4. `serverless deploy`
-5. `serverless invoke --function hello`
-6. `serverless remove`
+## Serverless Cloud Providers
 
-## How to contribute to Serverless
-
-We love our community! Contributions are always welcomed!
-Jump right into our [issues](https://github.com/serverless/serverless/issues) to join existing discussions or open up
-new ones if you have a bug or want to improve Serverless.
-
-Also feel free to open up [pull requests](https://github.com/serverless/serverless/pulls) which resolves issues!
-
-You may also take a look at our [code of conduct](/code_of_conduct.md).
-
-## User documentation
-
-- [Understanding Serverless and its configuration files](understanding-serverless)
-  - [Serverless services and functions](understanding-serverless/services-and-functions.md)
-  - [serverless.yml](understanding-serverless/serverless-yml.md)
-  - [serverless.env.yml](understanding-serverless/serverless-env-yml.md)
-- [How to build your Serverless services](guide)
-  - [Installing Serverless](guide/installation.md)
-  - [Provider account setup](guide/provider-account-setup.md)
-  - [Creating a service](guide/creating-a-service.md)
-  - [Deploying a service](guide/deploying-a-service.md)
-  - [Invoking a function](guide/invoking-a-function.md)
-  - [Viewing function logs](guide/viewing-function-logs.md)
-  - [Event sources](guide/event-sources.md)
-  - [Overview of available event sources](guide/overview-of-event-sources.md)
-  - [Custom provider resources](guide/custom-provider-resources.md)
-  - [Removing a service](guide/removing-a-service.md)
-- [Using plugins](using-plugins)
-  - [How to use additional plugins in your service](using-plugins/adding-custom-plugins.md)
-  - [Plugins provided by Serverless](using-plugins/core-plugins.md)
-- [Building plugins](developing-plugins)
-  - [How to build your own plugin](developing-plugins/building-plugins.md)
-  - [How to build provider integration with your plugin](developing-plugins/building-provider-integrations.md)
-- [Service templates](service-templates)
-- [Usage tracking](usage-tracking)
-  - [Detailed information regarding usage tracking](usage-tracking/usage-tracking.md)
-
-## Running in DEBUG mode
-If you run into issues/errors while working with Serverless, we print a user-friendly error. However, when reporting bugs, it's often useful to output the stack trace and other important information. To set debug mode, make sure you set the environment variable `SLS_DEBUG` with the following command (if you're in Unix based system):
-
-```
-export SLS_DEBUG=*
-```
+<div class="docsSections">
+  <div class="docsSection">
+    <div class="docsSectionHeader">
+      <a href="./providers/aws/">
+        <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/aws-black.png" width="250" draggable="false"/>
+      </a>
+    </div>
+    <div>
+      <ul>
+        <li><a href="./providers/aws/guide/quick-start">AWS QuickStart</a></li>
+        <li><a href="./providers/aws/guide">Guide</a></li>
+        <li><a href="./providers/aws/cli-reference">CLI Reference</a></li>
+        <li><a href="./providers/aws/events">Events</a></li>
+        <li><a href="./providers/aws/examples">Examples</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="docsSection">
+    <div class="docsSectionHeader">
+      <a href="./providers/azure/">
+        <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/azure-black.png" width="250" draggable="false"/>
+      </a>
+    </div>
+    <div>
+      <ul>
+        <li><a href="./providers/azure/guide/quick-start">Azure QuickStart</a></li>
+        <li><a href="./providers/azure/guide">Guide</a></li>
+        <li><a href="./providers/azure/cli-reference">CLI Reference</a></li>
+        <li><a href="./providers/azure/events">Events</a></li>
+        <li><a href="./providers/azure/examples">Examples</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="docsSection">
+    <div class="docsSectionHeader">
+      <a href="./providers/openwhisk/">
+        <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/openwhisk-black.png" width="250" draggable="false"/>
+      </a>
+    </div>
+    <div>
+      <ul>
+        <li><a href="./providers/openwhisk/guide/quick-start">OpenWhisk QuickStart</a></li>
+        <li><a href="./providers/openwhisk/guide">Guide</a></li>
+        <li><a href="./providers/openwhisk/cli-reference">CLI Reference</a></li>
+        <li><a href="./providers/openwhisk/events">Events</a></li>
+        <li><a href="./providers/openwhisk/examples">Examples</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="docsSection">
+    <div class="docsSectionHeader">
+      <a href="./providers/google/">
+        <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/gcf-black.png" width="250" draggable="false"/>
+      </a>
+    </div>
+    <div>
+      <ul>
+        <li><a href="./providers/google/guide/quick-start">Google CF QuickStart</a></li>
+        <li><a href="./providers/google/guide">Guide</a></li>
+        <li><a href="./providers/google/cli-reference">CLI Reference</a></li>
+        <li><a href="./providers/google/events">Events</a></li>
+        <li><a href="./providers/google/examples">Examples</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

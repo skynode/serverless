@@ -1,11 +1,20 @@
 version: '2'
 services:
   serverless-node:
-    image: node:5.11.1
+    build:
+      context: ./
+      dockerfile: Dockerfile
     working_dir: /app
     volumes:
       - .:/app
       - ~/.aws/:/root/.aws
+      - ~/.gcloud/:/root/.gcloud
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_PROFILE
+      - AWS_SESSION_TOKEN
+      - AWS_SECURITY_TOKEN
   aws-nodejs:
     image: node:5.11.1
     volumes:
@@ -14,11 +23,35 @@ services:
     image: python:2.7
     volumes:
       - ./tmp/serverless-integration-test-aws-python:/app
+  aws-python3:
+    image: python:3.6
+    volumes:
+      - ./tmp/serverless-integration-test-aws-python3:/app
   aws-java-maven:
     image: maven:3-jdk-8
     volumes:
       - ./tmp/serverless-integration-test-aws-java-maven:/app
   aws-java-gradle:
-    image: qlik/gradle
+    image: java:8
     volumes:
       - ./tmp/serverless-integration-test-aws-java-gradle:/app
+  aws-groovy-gradle:
+    image: java:8
+    volumes:
+      - ./tmp/serverless-integration-test-aws-groovy-gradle:/app
+  aws-scala-sbt:
+    image: hseeberger/scala-sbt
+    volumes:
+      - ./tmp/serverless-integration-test-aws-scala-sbt:/app
+  aws-csharp:
+    image: microsoft/dotnet:1.0.4-sdk
+    volumes:
+      - ./tmp/serverless-integration-test-aws-csharp:/app
+  aws-fsharp:
+    image: microsoft/dotnet:1.0.4-sdk
+    volumes:
+      - ./tmp/serverless-integration-test-aws-fsharp:/app
+  google-nodejs:
+    image: node:6.9.1
+    volumes:
+      - ./tmp/serverless-integration-test-google-nodejs:/app
